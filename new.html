@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybertronian Archives</title>
+    <link rel="shortcut icon" href="https://cybertron.co.th/wp-content/uploads/2021/05/Cybertron-Logo.png" type="image/x-icon">
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #101010, #000000);
+            color: #e3e3e3;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: url('https://wallpapercave.com/wp/qf0QSKb.jpg') no-repeat center/cover;
+            color: #fff;
+            text-shadow: 0 0 15px #000;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #ffcc00;
+        }
+
+        /* Logo Banner */
+        .logo-banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #222;
+            border-bottom: 3px solid #333;
+        }
+
+        .logo-banner img {
+            height: 80px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-banner img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Factions Section */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .faction {
+            flex: 1 1 45%;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+            border-radius: 15px;
+            background: rgba(20, 20, 20, 0.9);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .faction h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .autobot h2 { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+        .decepticon h2 { color: #6600cc; text-shadow: 0 0 10px #6600cc; }
+        .maximal h2 { color: #00cc00; text-shadow: 0 0 10px #00cc00; }
+        .predacon h2 { color: #cc9900; text-shadow: 0 0 10px #cc9900; }
+        .dinobot h2 { color: #ff6600; text-shadow: 0 0 10px #ff6600; }
+
+        .character-card {
+            display: inline-block;
+            width: 220px;
+            margin: 15px;
+            padding: 20px;
+            background: rgba(15, 15, 15, 0.9);
+            border: 1px solid #444;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .character-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .character-card h3 {
+            font-size: 1.4rem;
+            margin: 10px 0;
+            color: #ffcc00;
+        }
+
+        .character-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #aaa;
+            border-top: 3px solid #333;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #06f;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cybertronian Archives</h1>
+        <p>Explore Autobots, Decepticons, Maximals, Predacons, and Dinobots!</p>
+    </header>
+
+    <!-- Faction Logos -->
+    <div class="logo-banner">
+        <img src="http://wallpapercave.com/wp/lMs4AWd.jpg" alt="Autobot Logo">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.y77VRMf4xjN7rZtSrffeSQHaEK&pid=Api&P=0&h=220" alt="Decepticon Logo">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.eLqvuecOqisLNlVxC5aTTAAAAA&pid=Api&P=0&h=220" alt="Maximal Logo">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/df4ee8e5-050f-4b2d-b1ee-a6fad0fee111/decjl6f-542900e3-f992-47af-a147-53f0cfd9e3a1.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RmNGVlOGU1LTA1MGYtNGIyZC1iMWVlLWE2ZmFkMGZlZTExMVwvZGVjamw2Zi01NDI5MDBlMy1mOTkyLTQ3YWYtYTE0Ny01M2YwY2ZkOWUzYTEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.YcTq92e4TL7nEP782lKRbMy8tW5xBe9n8qt2ax83syU" alt="Predacon Logo">
+        <img src="https://i.pinimg.com/originals/7f/b3/7d/7fb37de34f56c7605b0b596d7a9c809f.jpg" alt="Dinobot Logo">
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Autobots Section -->
+        <section class="faction autobot">
+            <h2>Autobots</h2>
+            <div class="character-card"><img src="https://vignette.wikia.nocookie.net/transformers-prime/images/a/a1/Optimus_prime_prime_beast_hunters_promo_by_barricade24-dau08wv.png/revision/latest?cb=20180308090000&path-prefix=pl" alt="Optimus Prime"><h3>Optimus Prime</h3><p>The wise leader.</p></div>
+            <div class="character-card"><img src="https://tse2.mm.bing.net/th?id=OIP.HAO_g9Tl81hS6bypjIWInwHaEK&pid=Api&P=0&h=220" alt="Bumblebee"><h3>Bumblebee</h3><p>Scout and warrior.</p></div>
+            <div class="character-card"><img src="https://vignette.wikia.nocookie.net/transformers-history/images/d/db/Ratchet_(Prime).jpg/revision/latest?cb=20130518111913" alt="Ratchet"><h3>Ratchet</h3><p>The medic.</p></div>
+            <div class="character-card"><img src="http://images6.fanpop.com/image/photos/36900000/Ironhide-the-transformers-36926350-1600-1200.jpg" alt="Ironhide"><h3>Ironhide</h3><p>The weapons specialist.</p></div>
+        </section>
+
+        <!-- Decepticons Section -->
+        <section class="faction decepticon">
+            <h2>Decepticons</h2>
+            <div class="character-card"><img src="https://tse4.mm.bing.net/th?id=OIP.XGlA5OchNBIadFRCSTtBfgHaEo&pid=Api&P=0&h=220" alt="Megatron"><h3>Megatron</h3><p>The tyrant leader.</p></div>
+            <div class="character-card"><img src="https://i.pinimg.com/originals/01/5a/88/015a88b9b5af07ce92c2d6cf8c8931e5.jpg" alt="Starscream"><h3>Starscream</h3><p>The traitor.</p></div>
+            <div class="character-card"><img src="https://cdn.wallpapersafari.com/15/45/Hab7pP.jpg" alt="Soundwave"><h3>Soundwave</h3><p>The spy.</p></div>
+            <div class="character-card"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7ccb8162-a316-498e-9562-de7a59dd78bb/dfctxuw-0280bf4e-1372-40b1-b5f4-8bc7b39b02df.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdjY2I4MTYyLWEzMTYtNDk4ZS05NTYyLWRlN2E1OWRkNzhiYlwvZGZjdHh1dy0wMjgwYmY0ZS0xMzcyLTQwYjEtYjVmNC04YmM3YjM5YjAyZGYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.NUDCXE33umYjTy1274kSxFU_uq2qgKjS6ipAQsYLF7A" alt="Shockwave"><h3>Shockwave</h3><p>The scientist.</p></div>
+        </section>
+
+        <!-- Maximals Section -->
+        <section class="faction maximal">
+            <h2>Maximals</h2>
+            <div class="character-card"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ecf6bb3-e5c2-49aa-8300-365ddf7e83fa/dfnfk11-0c145013-ae80-458b-8aa0-b6c76b81396a.png/v1/fill/w_820,h_975/optimus_primal_rotb_png_by_kevingame_2_dfnfk11-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTIzNyIsInBhdGgiOiJcL2ZcLzRlY2Y2YmIzLWU1YzItNDlhYS04MzAwLTM2NWRkZjdlODNmYVwvZGZuZmsxMS0wYzE0NTAxMy1hZTgwLTQ1OGItOGFhMC1iNmM3NmI4MTM5NmEucG5nIiwid2lkdGgiOiI8PTEwNDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.QsunRwUqS9jBeOfrw1MBR80Q5EnlNqtlPDuFmInZoIc" alt="Optimus Primal"><h3>Optimus Primal</h3><p>Maximal leader.</p></div>
+            <div class="character-card"><img src="https://i.pinimg.com/originals/8e/45/98/8e4598ed1358f3cf6fa55b385f5b64d6.png" alt="Rhinox"><h3>Rhinox</h3><p>The engineer.</p></div>
+            <div class="character-card"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/600cf92c-ca54-4525-af77-d73d33c4bc0f/dfydqgv-cec9f4a7-01c9-493c-ad5a-ff7ced8e05a8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzYwMGNmOTJjLWNhNTQtNDUyNS1hZjc3LWQ3M2QzM2M0YmMwZlwvZGZ5ZHFndi1jZWM5ZjRhNy0wMWM5LTQ5M2MtYWQ1YS1mZjdjZWQ4ZTA1YTgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lYAHQa97F28kLU9jWgVJzH4tKPPLfXBsUDNlQaelg-4" alt="Cheetor"><h3>Cheetor</h3><p>Fast and agile.</p></div>
+            <div class="character-card"><img src="http://images6.fanpop.com/image/photos/36900000/Dinobot-the-transformers-36948389-1800-1173.jpg" alt="Dinobot"><h3>Dinobot</h3><p>The honorable warrior.</p></div>
+        </section>
+
+        <!-- Predacons Section -->
+        <section class="faction predacon">
+            <h2>Predacons</h2>
+            <div class="character-card"><img src="https://cdn.suwalls.com/wallpapers/games/megatron-in-transformers-54567-1920x1200.jpg" alt="Predacon Megatron"><h3>Megatron</h3><p>Predacon leader.</p></div>
+            <div class="character-card"><img src="https://preview.redd.it/9hntv8pp38q91.jpg?width=640&crop=smart&auto=webp&s=7f9c513e19f14dedf3d44ae8869dbbaf7905b5b5" alt="Tarantulas"><h3>Tarantulas</h3><p>The scientist.</p></div>
+            <div class="character-card"><img src="https://tse1.mm.bing.net/th?id=OIP.lzM2qyqUXQKiGWc3V-AeUQHaFj&pid=Api&P=0&h=220" alt="Blackarachnia"><h3>Blackarachnia</h3><p>The femme fatale.</p></div>
+            <div class="character-card"><img src="https://reflector.tfw2005.com/wp-content/uploads/sites/14/2020/09/Earthrise-Scorponok-17.jpg" alt="Scorponok"><h3>Scorponok</h3><p>The loyal enforcer.</p></div>
+        </section>
+
+        <!-- Dinobots Section -->
+        <section class="faction dinobot">
+            <h2>Dinobots</h2>
+            <div class="character-card"><img src="https://vignette.wikia.nocookie.net/p__/images/7/75/AOE_Grimlock_concept.jpg/revision/latest?cb=20150430231431&path-prefix=protagonist" alt="Grimlock"><h3>Grimlock</h3><p>Dinobot leader.</p></div>
+            <div class="character-card"><img src="http://i0.wp.com/www.slashfilm.com/wp/wp-content/images/Wesley-Burt-Triceratops.jpg" alt="Slag"><h3>Slag</h3><p>The fiery warrior
